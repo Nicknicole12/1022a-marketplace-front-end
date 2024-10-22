@@ -11,8 +11,10 @@ type ProdutoType = {
 
 type UsuarioType = {
     id: number;
-    nome: string;
-    email: string; // Adicione outros campos conforme necessário
+    name: string;
+    email: string;
+    created_at:string;
+    updated_at:string 
 };
 
 function App() {
@@ -54,18 +56,20 @@ function App() {
                 }
             </div>
 
-            <div className="usuarios-container">
-                <h2>Lista de Usuários</h2>
-                <ul>
-                    {
-                        usuarios.map(usuario => (
-                            <li key={usuario.id}>
-                                {usuario.nome} - {usuario.email}
-                            </li>
-                        ))
-                    }
-                </ul>
+            {/* Seção de Usuários */}
+      <h2>Usuários</h2>
+      <div className="usuarios-container">
+        {usuarios.map(usuario => {
+          return (
+            <div key={usuario.id} className="usuario-item   ">
+              <h3>{usuario.name}</h3>
+              <p><strong>Email:</strong> {usuario.email}</p>
+              <p><strong>Data de Criação:</strong> {new Date(usuario.created_at).toLocaleString()}</p>
+              <p><strong>Última Atualização:</strong> {new Date(usuario.updated_at).toLocaleString()}</p>
             </div>
+          )
+        })}
+      </div>
         </>
     );
 }
