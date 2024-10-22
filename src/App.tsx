@@ -1,3 +1,5 @@
+//Nicole e Júlia: aqui colocamos o link para aparecer a lista usuarios e aproveitamos para melhorar o css dos usuarios aqui mesmo
+
 import { useEffect, useState } from 'react';
 import './App.css';
 
@@ -23,14 +25,12 @@ function App() {
     const [usuarios, setUsuarios] = useState<UsuarioType[]>([]);
 
     useEffect(() => {
-        setNome("Nicole Góis");
+        setNome("Jose Rosa, Gabriele Pimentel, Julia Capristo, Nicole Góis");
 
-        // Buscar os dados do Backend para produtos
         fetch("https://one022a-marketplace-8goe.onrender.com/produtos")
             .then(resposta => resposta.json())
             .then(dados => setProdutos(dados));
 
-        // Buscar os dados do Backend para usuários
         fetch("https://one022a-marketplace-8goe.onrender.com/usuarios")
             .then(resposta => resposta.json())
             .then(dados => setUsuarios(dados));
