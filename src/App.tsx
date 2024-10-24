@@ -1,4 +1,3 @@
-//Nicole e Júlia: aqui colocamos o link para aparecer a lista usuarios e aproveitamos para melhorar o css dos usuarios aqui mesmo
 
 import { useEffect, useState } from 'react';
 import './App.css';
@@ -56,7 +55,6 @@ function App() {
                 }
             </div>
 
-            {/* Seção de Usuários */}
       <h2>Usuários</h2>
       <div className="usuarios-container">
         {usuarios.map(usuario => {
