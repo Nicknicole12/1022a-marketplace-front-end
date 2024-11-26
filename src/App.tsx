@@ -24,9 +24,9 @@ function App() {
     const [usuarios, setUsuarios] = useState<UsuarioType[]>([]);
 
     useEffect(() => {
-        setNome("Jose Rosa, Gabriele Pimentel, Julia Capristo, Nicole Góis");
+        setNome("Produtos");
 
-        fetch("https://one022a-marketplace-8goe.onrender.com/produtos")
+        fetch("https://localhost:8000/produtos")
             .then(resposta => resposta.json())
             .then(dados => setProdutos(dados));
 
